@@ -6,8 +6,6 @@ import { useEffect, useState } from 'react';
 import { useNetwork } from 'wagmi';
 
 const Balances = ({ address }: BalanceProps) => {
-	if (!address) return <Text>Connect wallet first</Text>;
-
 	const [results, setResults] = useState<BalanceData[] | never[]>([]);
 	const [isLoaded, setLoaded] = useState(false);
 	const { chain } = useNetwork();
