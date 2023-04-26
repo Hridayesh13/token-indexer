@@ -1,5 +1,6 @@
 import { BalanceData } from '@/types';
-import { Alchemy, Network } from 'alchemy-sdk';
+import { Alchemy, Network, Utils } from 'alchemy-sdk';
+const HRNumbers = require('human-readable-numbers');
 
 const getBalanceData = async (userAddress: string, chainId: number) => {
 	let network: Network;
@@ -34,6 +35,8 @@ const getBalanceData = async (userAddress: string, chainId: number) => {
 	const balanceData: BalanceData[] = data.tokenBalances.map((balance, index) => ({
 		balance,
 		tokenData: tokenData[index],
+		isLong: Utils.formatUnits(balance.tokenBalance!).length > 5,
+		hrBalance: HRNumbers.toHumanString(Utils.formatUnits(balance.tokenBalance!)),
 	}));
 
 	return balanceData;

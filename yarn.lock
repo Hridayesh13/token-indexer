@@ -3964,6 +3964,11 @@ hoist-non-react-statics@^3.3.1:
   dependencies:
     react-is "^16.7.0"
 
+human-readable-numbers@^0.9.5:
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/human-readable-numbers/-/human-readable-numbers-0.9.5.tgz#bbbd61e06ed0bafbba79b28734e512fec4dd3407"
+  integrity sha512-VC1uYLm7FR+4UkLaQdXPLodz7xTVLBte3X6iMCYK/uPJywoHyEZfR40+kCN4YqYd+FNCPJAJNYv2CSMvAprgsQ==
+
 humanize-ms@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/humanize-ms/-/humanize-ms-1.2.1.tgz#c46e3159a293f6b896da29316d8b6fe8bb79bbed"

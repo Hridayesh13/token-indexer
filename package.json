@@ -27,5 +27,8 @@
     "react-dom": "18.2.0",
     "typescript": "5.0.4",
     "wagmi": "^0.12.12"
+  },
+  "devDependencies": {
+    "human-readable-numbers": "^0.9.5"
   }
 }
