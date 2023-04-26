@@ -11,7 +11,7 @@ const Navbar = () => {
 	return (
 		<Flex as='nav' align='center' justify='space-between' padding='1.8rem'>
 			<Link href='/'>
-				<Image src='/vercel.svg' alt='Logo' boxSize='100px' />
+				<Image src='/logo.png' alt='Logo' boxSize='50px' />
 			</Link>
 			<Spacer />
 			<Button variant='ghost' minW='100px' rounded={'xl'}>

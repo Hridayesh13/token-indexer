@@ -10,7 +10,7 @@ export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
 			<Navbar />
-			<Flex w={'100vw'} h={'100vh'} px={'10vw'} justifyContent={'space-between'}>
+			<Flex w={'100vw'} h={'80vh'} px={'10vw'} justifyContent={'space-between'}>
 				{children}
 			</Flex>
 		</>

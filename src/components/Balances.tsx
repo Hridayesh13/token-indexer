@@ -1,9 +1,9 @@
 import { BalanceData, BalanceProps } from '@/types';
 import getBalanceData from '@/utils/balance';
-import { Stack, Text } from '@chakra-ui/react';
-import { Utils } from 'alchemy-sdk';
+import { Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useNetwork } from 'wagmi';
+import TokenCheckbox from './checkbox';
 
 const Balances = ({ address }: BalanceProps) => {
 	const [results, setResults] = useState<BalanceData[] | never[]>([]);
@@ -12,7 +12,7 @@ const Balances = ({ address }: BalanceProps) => {
 
 	useEffect(() => {
 		console.log('running useffect');
-
+		setLoaded(false);
 		const fetchData = async () => {
 			const response = await getBalanceData(address!, chain?.id!);
 			setResults(response);
@@ -27,17 +27,7 @@ const Balances = ({ address }: BalanceProps) => {
 		<>
 			{isLoaded ? (
 				<>
-					<Stack>
-						{results.map((el, i) => {
-							// console.log(el);
-							return (
-								<Text key={i}>
-									{el.tokenData.name} : {Utils.formatUnits(el.balance.tokenBalance!)}{' '}
-									{el.tokenData.symbol}
-								</Text>
-							);
-						})}
-					</Stack>
+					<TokenCheckbox tokens={results} />
 				</>
 			) : (
 				<>
