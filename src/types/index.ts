@@ -10,3 +10,7 @@ export type BalanceData = {
 	isLong: Boolean;
 	hrBalance: string;
 };
+
+export type TransactionProps = {
+	token: BalanceData;
+};

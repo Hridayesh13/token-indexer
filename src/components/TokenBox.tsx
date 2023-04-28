@@ -1,22 +1,22 @@
 import { Grid, Heading, ListItem, Stack, Text, UnorderedList } from '@chakra-ui/react';
 import { BalanceData } from '@/types';
-import CheckboxList from './checkbox2';
+import PoolCheckbox from './PoolCheckbox';
 import { Utils } from 'alchemy-sdk';
 
-type TokenCheckboxProps = {
+type TokenBoxProps = {
 	tokens: BalanceData[];
 };
 
-const POOLS = ['USDC', 'USDT', 'LINK'];
+const POOLS = ['USDC', 'USDT', 'LINK', 'FWETH'];
 
-const TokenCheckbox = ({ tokens }: TokenCheckboxProps) => {
+const TokenBox = ({ tokens }: TokenBoxProps) => {
 	const pools = tokens.filter((token) => POOLS.includes(token.tokenData.symbol!));
 	const others = tokens.filter((token) => !pools.includes(token));
 	return (
 		<>
 			<Grid templateColumns='repeat(2, 1fr)' gap={6} p={10}>
-				<CheckboxList label='POOLS' tokens={pools} />
-				{/* <CheckboxList label='OTHERS' tokens={others} /> */}
+				<PoolCheckbox label='POOLS' tokens={pools} />
+				{/* <PoolCheckbox label='OTHERS' tokens={others} /> */}
 				<Stack bg='gray.500' p={10} rounded='xl'>
 					<Heading size='lg'>OTHERS</Heading>
 					<UnorderedList>
@@ -39,4 +39,4 @@ const TokenCheckbox = ({ tokens }: TokenCheckboxProps) => {
 	);
 };
 
-export default TokenCheckbox;
+export default TokenBox;

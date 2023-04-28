@@ -3,7 +3,7 @@ import getBalanceData from '@/utils/balance';
 import { Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useNetwork } from 'wagmi';
-import TokenCheckbox from './checkbox';
+import TokenBox from './TokenBox';
 
 const Balances = ({ address }: BalanceProps) => {
 	const [results, setResults] = useState<BalanceData[] | never[]>([]);
@@ -27,7 +27,7 @@ const Balances = ({ address }: BalanceProps) => {
 		<>
 			{isLoaded ? (
 				<>
-					<TokenCheckbox tokens={results} />
+					<TokenBox tokens={results} />
 				</>
 			) : (
 				<>
